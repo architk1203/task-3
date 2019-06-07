@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTE HOMEPAGE</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<a href="index.html"><h1><img src="img/logo.png" align="left" alt="iste logo" ><div class="head">INDIAN SOCIETY FOR TECHNICAL EDUCATION</div></h1></a>
+<ul class="nav">
+<a href="#"><li class="first">HOME</li></a>
+  <a href="#"><li>About</li></a>
+  <a href="#"><li>Events</li></a>
+  <a href="#"><li>Gallery</li></a>
+  <a href="#"><li>Team</li></a>
+  <a href=""><li>Contact</li></a>
+</ul>
+<form name="tablegen">
+    <label>Size: <input type="text" name="rows" id="rows"/></label>
+    <br>
+    <br>
+    <label>Color: <input type="color" name="selectcolor" id="selector"></label>
+    <br>
+    <br>
+    <input name="generate" type="button" value="Create Table!" onclick='createTable();'/>
+    </form>
+    
+    <div id="mytable" onclick=""></div>
+    
+
+<script>
+function createTable()
+{
+    var i = document.getElementById('rows').value;
+    for(var j=0; j<i;j++){
+      var table=document.getElementById('mytable');
+      var row=table.insertRow(j);
+      for(var c=0;c<i;c++)
+      {
+        var cell=row.insertCell(c);
+        cell.innerHTML="    &nbsp;&nbsp;&nbsp;&nbsp";
+        var d=" "+r +c;
+        var ids=d.toString();
+        cell.id=" "+ids;
+
+        cell.onclick=color();
+      }
+    }
+    
+}
+function color() {
+var color=document.getElementById('selector').value;
+document.getElementsById(this.id).style.backgroundColor= color;
+document.getElementById(this.id).onclick=white();
+}
+
+function white()
+{
+  document.getElementById(this.id).style.backgroundColor="white";
+  document.getElementById(this.id).onclick=color();
+}
+   
+</script>
+</body>
+</html>
